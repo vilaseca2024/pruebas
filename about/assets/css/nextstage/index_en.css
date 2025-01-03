@@ -1,0 +1,777 @@
+@charset "UTF-8";
+/*
+font
+*/
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('http://global.rakuten.com/assets/fonts/NotoSans-Regular.eot');
+    src: url('http://global.rakuten.com/assets/fonts/NotoSans.eot?#iefix') format('embedded-opentype'),
+    url('http://global.rakuten.com/assets/fonts/NotoSans.woff') format('woff'),
+    url('http://global.rakuten.com/assets/fonts/NotoSans.ttf')  format('truetype');
+}
+.rg-normal {
+  font-family: 'Rakuten Global', 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, 'Arial Unicode MS', sans-serif !important; }
+
+.rg-bold {
+  font-family: 'Rakuten Global bold', 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, 'Arial Unicode MS', sans-serif !important; }
+
+/*
+初期設定
+*/
+#brandContainer {
+  display: none; }
+
+#brandLoad {
+  /*display: none;*/
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+  background-image: url(../../img/nextstage/loader.gif);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+#preload {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh; }
+  #preload .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center; }
+    #preload .bg.bg1 {
+      background-image: url(../../img/nextstage/bg_01.jpg); }
+    #preload .bg.bg2 {
+      background-image: url(../../img/nextstage/bg_02.jpg); }
+    #preload .bg.bg3 {
+      background-image: url(../../img/nextstage/bg_03.jpg); }
+    #preload .bg.bg4 {
+      background-image: url(../../img/nextstage/bg_04.jpg); }
+    #preload .bg.bg5 {
+      background-image: url(../../img/nextstage/bg_05.jpg); }
+    #preload .bg.bg6 {
+      background-image: url(../../img/nextstage/bg_06.jpg); }
+    #preload .spBg.bg1 {
+      background-image: url(../../img/nextstage/bg_01_sp.jpg); }
+    #preload .spBg.bg2 {
+      background-image: url(../../img/nextstage/bg_02_sp.jpg); }
+    #preload .spBg.bg3 {
+      background-image: url(../../img/nextstage/bg_03_sp.jpg); }
+    #preload .spBg.bg4 {
+      background-image: url(../../img/nextstage/bg_04_sp.jpg); }
+    #preload .spBg.bg5 {
+      background-image: url(../../img/nextstage/bg_05_sp.jpg); }
+    #preload .spBg.bg6 {
+      background-image: url(../../img/nextstage/bg_06_sp.jpg); }
+
+/*
+scroll animation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - scroll animation
+*/
+.inUp {
+  opacity: 0;
+  transform: translate(0, 20px);
+  transition: .4s; }
+
+.inUp.scrollin {
+  opacity: 1;
+  transform: translate(0, 0); }
+
+@media screen and (max-width: 768px) {
+  /*
+	template breadcramb h1 background
+	*/
+  .topObi {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    margin-top: -200px;
+    position: relative;
+    z-index: 10; }
+  /*
+	br
+	*/
+  br.pc {
+    display: none; }
+  br.sp {
+    display: inline-block; }
+  /*
+	Bg
+	*/
+  #brandBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh; }
+    #brandBg .bg {
+      /*display: none;*/
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      opacity: 0; }
+      #brandBg .bg.bg1 {
+        background-image: url(../../img/nextstage/bg_01.jpg); }
+      #brandBg .bg.bg2 {
+        background-image: url(../../img/nextstage/bg_02.jpg); }
+      #brandBg .bg.bg3 {
+        background-image: url(../../img/nextstage/bg_03.jpg); }
+      #brandBg .bg.bg4 {
+        background-image: url(../../img/nextstage/bg_04.jpg); }
+      #brandBg .bg.bg5 {
+        background-image: url(../../img/nextstage/bg_05.jpg); }
+      #brandBg .bg.bg6 {
+        background-image: url(../../img/nextstage/bg_06.jpg); }
+      #brandBg.spBG .bg.bg1 {
+        background-image: url(../../img/nextstage/bg_01_sp.jpg); }
+      #brandBg.spBG .bg.bg2 {
+        background-image: url(../../img/nextstage/bg_02_sp.jpg); }
+      #brandBg.spBG .bg.bg3 {
+        background-image: url(../../img/nextstage/bg_03_sp.jpg); }
+      #brandBg.spBG .bg.bg4 {
+        background-image: url(../../img/nextstage/bg_04_sp.jpg); }
+      #brandBg.spBG .bg.bg5 {
+        background-image: url(../../img/nextstage/bg_05_sp.jpg); }
+      #brandBg.spBG .bg.bg6 {
+        background-image: url(../../img/nextstage/bg_06_sp.jpg); }
+      #brandBg .bg .sumi {
+        margin: 26vh auto 0;
+        width: 89vw;
+        max-width: 1380px;
+        height: 50vh;
+        background-image: url(../../img/nextstage/sumi.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat; }
+  /*
+	content
+	*/
+  #brandContents {
+    width: 100%; }
+    #brandContents p {
+      font-size: 14px;
+      line-height: 1.75em;
+      text-align: center;
+      color: #000;
+      padding: 0 20px; }
+    #brandContents .mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
+      #brandContents .mask .sec {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0; }
+    #brandContents #sec1 {
+      /*display: none;*/ }
+      #brandContents #sec1 .inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        margin-top: -100px; }
+      #brandContents #sec1 h1.logo {
+        opacity: 0;
+        margin: 0 auto;
+        width: 250px; }
+        #brandContents #sec1 h1.logo img {
+          width: 100%; }
+      #brandContents #sec1 p.t1 {
+        opacity: 0;
+        font-size: 22px;
+        line-height: 1em;
+        font-weight: 500; }
+      #brandContents #sec1 p.t2 {
+        opacity: 0;
+        font-size: 12px;
+        line-height: 1.87em;
+        padding: 0 9vw; }
+    #brandContents #sec2 {
+      /*display: none;*/ }
+      #brandContents #sec2 .inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        margin-top: -130px; }
+      #brandContents #sec2 p.t1 {
+        padding: 0 15vw; }
+      #brandContents #sec2 p.t2 {
+        padding: 0 15vw; }
+    #brandContents #sec3 {
+      /*display: none;*/ }
+      #brandContents #sec3 .inner {
+        position: absolute;
+        /*top:50%;*/
+        top: 80px;
+        left: 0;
+        width: 100%;
+        /*margin-top: -45vh;*/ }
+      #brandContents #sec3 p.t1 {
+        color: white;
+        padding: 0 10vw; }
+    #brandContents #sec4 {
+      /*display: none;*/ }
+      #brandContents #sec4 .inner {
+        position: absolute;
+        bottom: 100px;
+        left: 2vw;
+        width: 90vw; }
+      #brandContents #sec4 p.t1 {
+        color: white;
+        padding: 0 10vw;
+        text-align: left; }
+    #brandContents #sec5 {
+      /*display: none;*/ }
+      #brandContents #sec5 .inner {
+        position: absolute;
+        bottom: 20vh;
+        left: 0;
+        width: 100%; }
+      #brandContents #sec5 p.t1 {
+        color: white;
+        width: 80vw;
+        max-width: 500px;
+        margin: 0 auto; }
+    #brandContents #sec6 {
+      /*display: none;*/ }
+      #brandContents #sec6 .inner {
+        position: absolute;
+        top: 13vh;
+        left: 5vw;
+        width: 100%; }
+      #brandContents #sec6 p.t1 {
+        color: white;
+        width: 80vw;
+        max-width: 500px;
+        text-align: left; }
+    #brandContents #sec7 {
+      /*display: none;*/ }
+      #brandContents #sec7 .sumi {
+        position: absolute;
+        top: 26vh;
+        left: 0;
+        width: 100%;
+        text-align: center; }
+        #brandContents #sec7 .sumi img {
+          margin: 0 auto;
+          width: 89vw;
+          max-width: 1380px; }
+      #brandContents #sec7 .inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        margin-top: 0; }
+      #brandContents #sec7 p.t1 {
+        line-height: 1.81em;
+        margin: 0 auto;
+        width: 80vw; }
+  #scroll {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 130px;
+    height: 55px;
+    margin-left: -65px;
+    text-align: center; }
+    #scroll .text {
+      font-size: 10px;
+      line-height: 1em; }
+    #scroll .icon {
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      margin-left: -7px;
+      width: 14px;
+      height: 71px;
+      overflow: hidden;
+      background-image: url(../../img/nextstage/scroll_icon.png);
+      background-size: 14px 142px;
+      background-repeat: no-repeat;
+      background-position: 0 0; }
+    #scroll.white .text {
+      color: white; }
+    #scroll.white .icon {
+      background-position: 0 -71px; }
+  #nav {
+    position: fixed;
+    top: 50%;
+    right: 3px;
+    margin-top: -80px;
+    z-index: 110; }
+    #nav .btn {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      padding-top: 13px;
+      padding-left: 13px;
+      box-sizing: border-box; }
+      #nav .btn .circle {
+        width: 4px;
+        height: 4px;
+        border-radius: 3px;
+        border: 1px solid #000; }
+      #nav .btn.on .circle {
+        background-color: #000; }
+    #nav.white .btn .circle {
+      border: 1px solid #fff; }
+    #nav.white .btn.on .circle {
+      background-color: #fff; }
+  #fin {
+    /*display: none;*/
+    width: 100%;
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 100px; }
+    #fin .movie {
+      margin: 0 25px 20px;
+    }
+    #fin .movie .vjs-dock-text {
+      display: none;
+    }
+    #fin p.movie_caption {
+      max-width: 710px;
+      margin: 0 auto 60px;
+      text-align: right;
+    }
+    #fin .logo {
+      width: 234px;
+      margin: 0 auto; }
+      #fin .logo img {
+        width: 100%; }
+    #fin p {
+      margin-top: 25px;
+      font-size: 14px;
+      line-height: 1.81em;
+      text-align: center;
+      padding: 0 9vw; }
+      #fin p em {
+        font-size: 16px;
+        font-style: normal; }
+    #fin p.t1 {
+      margin-top: 50px;
+      line-height: 2.38em; }
+      #fin p.t1:after {
+        content: "";
+        width: 1px;
+        height: 45px;
+        background-color: #000;
+        margin: 55px auto 0;
+        display: block; }
+    #fin p.m90 {
+      margin-top: 45px; }
+    #fin p.m100 {
+      margin-top: 50px; }
+    #fin p.m110 {
+      margin-top: 55px; }
+    #fin .colors {
+      margin: 55px auto 0;
+      width: 300px; }
+      #fin .colors img {
+        width: 100%; }
+    #fin .logos {
+      text-align: center;
+      font-size: 0;
+      margin: 0 auto;
+      max-width: 400px; }
+    #fin .logos .r-logo {
+      display: inline-block;
+      margin: 50px 25px 0; }
+    #fin .logos .r-logo img {
+      width: auto;
+      height: 60px; } }
+
+@media screen and (max-width: 320px) {
+  br.no320 {
+    display: none; }
+  #brandContents p {
+    /*font-size: 11px;*/
+    font-size: 11px; }
+  #brandContents #sec1 .inner {
+    margin-top: -70px; }
+  #brandContents #sec1 h1.logo {
+    /*width: 250px;*/
+    width: 200px; }
+  #brandContents #sec1 p.t1 {
+    /*font-size: 27px;*/
+    font-size: 18px; }
+  #brandContents #sec1 p.t2 {
+    /*font-size: 15px;*/
+    font-size: 12px; }
+  #brandContents #sec2 .inner {
+    margin-top: -160px; }
+  #brandContents #sec2 p.t1 {
+    /*font-size: 16px;*/
+    font-size: 11px; }
+  #fin p {
+    /*font-size: 11px;*/
+    font-size: 11px;
+    letter-spacing: 0; }
+    #fin p em {
+      /*font-size: 16px;*/
+      font-size: 14px; }
+  #fin .colors {
+    width: 260px; }
+  #fin .logos .r-logo {
+    margin: 50px 40px 0; }
+    #fin .logos .r-logo img {
+      width: auto;
+      height: 60px; } }
+
+/*********************************************************************************************************************
+*********************************************************************************************************************
+large
+*********************************************************************************************************************
+*********************************************************************************************************************/
+@media screen and (min-width: 769px) {
+  /*
+	template breadcramb h1 background
+	*/
+  .topObi {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    margin-top: -200px;
+    position: relative;
+    z-index: 10; }
+  /*
+	br
+	*/
+  br.sp {
+    display: none; }
+  br.pc {
+    display: inline-block; }
+  /*
+	Bg
+	*/
+  #brandBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh; }
+    #brandBg .bg {
+      /*display: none;*/
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      opacity: 0; }
+      #brandBg .bg.bg1 {
+        background-image: url(../../img/nextstage/bg_01.jpg); }
+      #brandBg .bg.bg2 {
+        background-image: url(../../img/nextstage/bg_02.jpg); }
+      #brandBg .bg.bg3 {
+        background-image: url(../../img/nextstage/bg_03.jpg); }
+      #brandBg .bg.bg4 {
+        background-image: url(../../img/nextstage/bg_04.jpg); }
+      #brandBg .bg.bg5 {
+        background-image: url(../../img/nextstage/bg_05.jpg); }
+      #brandBg .bg.bg6 {
+        background-image: url(../../img/nextstage/bg_06.jpg); }
+      #brandBg .bg .sumi {
+        margin: 20vh auto 0;
+        width: 89vw;
+        max-width: 1380px;
+        height: 50vh;
+        background-image: url(../../img/nextstage/sumi.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat; }
+  /*
+	content
+	*/
+  #brandContents {
+    width: 100%; }
+    #brandContents p {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 22px;
+      line-height: 2.18em;
+      text-align: center;
+      color: #000;
+      letter-spacing: normal; }
+    #brandContents .mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
+      #brandContents .mask .sec {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0; }
+    #brandContents #sec1 {
+      /*display: none;*/ }
+      #brandContents #sec1 .inner {
+        position: absolute;
+        /*top:50%;*/
+        top: 422px;
+        left: 0;
+        width: 100%;
+        margin-top: -200px; }
+      #brandContents #sec1 h1.logo {
+        opacity: 0;
+        margin: 0 auto;
+        width: 593px; }
+        #brandContents #sec1 h1.logo img {
+          width: 100%; }
+      #brandContents #sec1 p.t1 {
+        opacity: 0;
+        margin-top: 70px;
+        font-size: 51px;
+        line-height: 1em;
+        font-weight: 500;
+        letter-spacing: normal; }
+      #brandContents #sec1 p.t2 {
+        opacity: 0;
+        margin-top: 40px;
+        font-size: 24px;
+        line-height: 1.87em; }
+    #brandContents #sec2 {
+      /*display: none;*/ }
+      #brandContents #sec2 .inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        margin-top: -10vh; }
+      #brandContents #sec2 p.t1 {
+        padding: 0 15vw; }
+      #brandContents #sec2 p.t2 {
+        padding: 30px 15vw 0; }
+    #brandContents #sec3 {
+      /*display: none;*/ }
+      #brandContents #sec3 .inner {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        /*margin-top: -45vh;*/ }
+      #brandContents #sec3 p.t1 {
+        padding: 0 15vw;
+        color: white; }
+    #brandContents #sec4 {
+      /*display: none;*/ }
+      #brandContents #sec4 .inner {
+        max-width: 1095px;
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        height: 100%; }
+      #brandContents #sec4 p.t1 {
+        position: absolute;
+        bottom: 145px;
+        right: 0;
+        color: white;
+        text-align: left; }
+    #brandContents #sec5 {
+      /*display: none;*/ }
+      #brandContents #sec5 .inner {
+        position: absolute;
+        bottom: 20vh;
+        left: 0;
+        width: 100%; }
+      #brandContents #sec5 p.t1 {
+        color: white; }
+    #brandContents #sec6 {
+      /*display: none;*/ }
+      #brandContents #sec6 .inner {
+        max-width: 1095px;
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        height: 100%; }
+      #brandContents #sec6 p.t1 {
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        color: white;
+        text-align: left; }
+    #brandContents #sec7 {
+      /*display: none;*/ }
+      #brandContents #sec7 .sumi {
+        position: absolute;
+        top: 20vh;
+        left: 0;
+        width: 100%;
+        text-align: center; }
+        #brandContents #sec7 .sumi img {
+          margin: 0 auto;
+          width: 89vw;
+          max-width: 1380px; }
+      #brandContents #sec7 .inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        margin-top: -5vh; }
+      #brandContents #sec7 p.t1 {
+        line-height: 1.81em;
+        padding: 0 10vw; }
+  #scroll {
+    position: fixed;
+    bottom: -30px;
+    left: 50%;
+    width: 130px;
+    height: 95px;
+    margin-left: -65px;
+    text-align: center;
+    opacity: 0; }
+    #scroll .text {
+      font-size: 13px;
+      line-height: 1em; }
+    #scroll .icon {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -7px;
+      width: 14px;
+      height: 71px;
+      overflow: hidden;
+      background-image: url(../../img/nextstage/scroll_icon.png);
+      background-size: 14px 142px;
+      background-repeat: no-repeat;
+      background-position: 0 0; }
+    #scroll.white .text {
+      color: white; }
+    #scroll.white .icon {
+      background-position: 0 -71px; }
+  #nav {
+    position: fixed;
+    top: 50%;
+    right: 15px;
+    margin-top: -110px;
+    z-index: 110; }
+    #nav .btn {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      padding-top: 17px;
+      padding-left: 17px;
+      box-sizing: border-box; }
+      #nav .btn .circle {
+        width: 6px;
+        height: 6px;
+        border-radius: 4px;
+        border: 1px solid #000; }
+      #nav .btn.on .circle {
+        background-color: #000; }
+    #nav.white .btn .circle {
+      border: 1px solid #fff; }
+    #nav.white .btn.on .circle {
+      background-color: #fff; }
+  #fin {
+    /*display: none;*/
+    width: 100%;
+    background-color: white;
+    padding-top: 143px;
+    padding-bottom: 180px; }
+    #fin .movie {
+      margin: 0 auto 20px;
+    }
+    #fin .movie .vjs-dock-text {
+      display: none;
+    }
+    #fin p.movie_caption {
+      max-width: 710px;
+      margin: 0 auto 100px;
+      text-align: right;
+      font-size: 14px;
+    }
+    #fin .logo {
+      width: 468px;
+      margin: 0 auto; }
+      #fin .logo img {
+        width: 100%; }
+    #fin p {
+      margin: 35px auto 0;
+      font-size: 22px;
+      line-height: 1.81em;
+      text-align: center;
+      padding: 0 10vw;
+      max-width: 1095px; }
+      #fin p em {
+        font-size: 40px;
+        font-style: normal; }
+    #fin p.t1 {
+      margin-top: 100px;
+      line-height: 2.38em; }
+      #fin p.t1:after {
+        content: "";
+        width: 1px;
+        height: 90px;
+        background-color: #000;
+        margin: 110px auto 0;
+        display: block; }
+    #fin p.m90 {
+      margin-top: 90px; }
+    #fin p.m100 {
+      /*margin-top: 100px;*/
+      margin-top: 60px; }
+    #fin p.m110 {
+      /*margin-top: 110px;*/
+      margin-top: 70px; }
+    #fin .colors {
+      margin: 150px auto 0;
+      width: 717px; }
+      #fin .colors img {
+        width: 100%; }
+    #fin .logos {
+      text-align: center;
+      font-size: 0;
+      margin: 0 auto;
+      max-width: 1200px; }
+    #fin .logos .r-logo {
+      display: inline-block;
+      margin: 100px 25px 0; }
+    #fin .logos .r-logo img {
+      width: auto;
+      height: 120px; } }
+
+/*********************************************************************************************************************
+*********************************************************************************************************************
+middle
+*********************************************************************************************************************
+*********************************************************************************************************************/
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  /*
+	content
+	*/
+  #brandContents p {
+    /*font-size: 22px;*/
+    font-size: 17px; }
+  #brandContents #sec1 p.t1 {
+    /*font-size: 51px;*/
+    font-size: 38px; }
+  #brandContents #sec1 p.t2 {
+    /*font-size: 24px;*/
+    font-size: 19px; }
+  #fin p {
+    /*font-size: 21px;*/
+    font-size: 16px; }
+    #fin p em {
+      /*font-size: 32px;*/
+      font-size: 25px; } }
