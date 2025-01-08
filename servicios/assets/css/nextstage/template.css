@@ -1,0 +1,30 @@
+.rf-header .rf-header-inner{
+  /*position: absolute !important;*/
+  /*top:-200px;*/
+  z-index: 200;
+}
+
+.rf-footer{
+	margin-top: 0 !important;
+	position: relative;
+	z-index: 100;
+}
+
+.rf-breadcrumb{
+	position: relative;
+	z-index: 100;
+}
+
+.rf-title-group.rf-inner{
+	position: relative;
+	z-index: 100;
+}
+
+#container{
+	max-width: 100% !important;
+}
+
+#global-scrolltop{
+	z-index: 110;
+}
+
